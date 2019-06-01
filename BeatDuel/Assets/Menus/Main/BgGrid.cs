@@ -19,11 +19,8 @@ public class BgGrid : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    public void LoadSongChooser()
     {
-        if (Input.touchCount > 0)
-        {
-            SceneManager.LoadScene("ChooseSongScene");
-        }
+        SceneManager.LoadScene("ChooseSongScene");
     }
 }
