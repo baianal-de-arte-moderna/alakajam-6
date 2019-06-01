@@ -636,6 +636,31 @@ PrefabInstance:
       propertyPath: OnDrumKitHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 56700813784001341, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4af9fbe4023ca174c941fff83e4af9c2, type: 3}
+    - target: {fileID: 1658449840370406008, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 14a465a03125d2547b4a7a3051e696ba, type: 3}
+    - target: {fileID: 2799045660204129789, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4aabec134a1111a46aec754305ac45d2, type: 3}
+    - target: {fileID: 3503008419028302054, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 68587bb586d43ca40a7ca4f32350bce5, type: 3}
+    - target: {fileID: 7829798901674619053, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d18f33068367f841acf7de78b1a620a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cd404b9dc7174d4db13a792a1216038, type: 3}
 --- !u!224 &964740610 stripped
@@ -1020,6 +1045,37 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2757887270361557335, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+    - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DrumElementHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2757887270361557335, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: OnDrumKitHitEvent.m_PersistentCalls.m_Calls.Array.size
@@ -1075,37 +1131,6 @@ PrefabInstance:
       propertyPath: OnDrumKitHitEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2757887270361557335, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-    - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DrumElementHit
-      objectReference: {fileID: 0}
-    - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4584684393812621766, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -1126,51 +1151,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 175
       objectReference: {fileID: 0}
-    - target: {fileID: 4584684393812621765, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 4584684393812621765, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4584684393812621765, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4584684393812621765, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4584684393812621761, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 6a997b5b48f61f2488456a466a9b1686, type: 3}
-    - target: {fileID: 4584684393812621761, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: BypassEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4584684393812621761, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: BypassListenerEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4584684393812621761, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: BypassReverbZones
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4584684393812621761, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: Priority
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 8228859543617636448, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -1185,31 +1165,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 175
-      objectReference: {fileID: 0}
-    - target: {fileID: 8228859543617636455, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a0cb95cc33ddde846aca923258f6abfb, type: 3}
-    - target: {fileID: 8228859543617636455, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: BypassEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8228859543617636455, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: BypassListenerEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8228859543617636455, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: BypassReverbZones
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8228859543617636455, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: Priority
-      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 5119875778811923607, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
@@ -1231,31 +1186,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 350
       objectReference: {fileID: 0}
-    - target: {fileID: 5119875778811923600, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3408f46b18bdb834082d2c87b3a50218, type: 3}
-    - target: {fileID: 5119875778811923600, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: BypassEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5119875778811923600, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: BypassListenerEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5119875778811923600, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: BypassReverbZones
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5119875778811923600, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: Priority
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 9070087661626382569, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -1275,31 +1205,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -175
-      objectReference: {fileID: 0}
-    - target: {fileID: 9070087661626382574, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 43e6b9c3c0b8de94eba4ee31988433e0, type: 3}
-    - target: {fileID: 9070087661626382574, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: BypassEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9070087661626382574, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: BypassListenerEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9070087661626382574, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: BypassReverbZones
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9070087661626382574, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: Priority
-      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 3166818282500517150, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
@@ -1346,6 +1251,151 @@ PrefabInstance:
       propertyPath: Priority
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 4584684393812621765, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584684393812621765, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584684393812621765, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584684393812621765, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584684393812621761, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6a997b5b48f61f2488456a466a9b1686, type: 3}
+    - target: {fileID: 4584684393812621761, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584684393812621761, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: BypassListenerEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584684393812621761, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584684393812621761, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: Priority
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119875778811923600, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3408f46b18bdb834082d2c87b3a50218, type: 3}
+    - target: {fileID: 5119875778811923600, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119875778811923600, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: BypassListenerEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119875778811923600, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119875778811923600, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: Priority
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228859543617636455, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a0cb95cc33ddde846aca923258f6abfb, type: 3}
+    - target: {fileID: 8228859543617636455, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228859543617636455, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: BypassListenerEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228859543617636455, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228859543617636455, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: Priority
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 9070087661626382574, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 43e6b9c3c0b8de94eba4ee31988433e0, type: 3}
+    - target: {fileID: 9070087661626382574, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9070087661626382574, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: BypassListenerEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9070087661626382574, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9070087661626382574, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: Priority
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 56700813784001341, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4af9fbe4023ca174c941fff83e4af9c2, type: 3}
+    - target: {fileID: 1658449840370406008, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 14a465a03125d2547b4a7a3051e696ba, type: 3}
+    - target: {fileID: 2799045660204129789, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4aabec134a1111a46aec754305ac45d2, type: 3}
+    - target: {fileID: 3503008419028302054, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 68587bb586d43ca40a7ca4f32350bce5, type: 3}
+    - target: {fileID: 7829798901674619053, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d18f33068367f841acf7de78b1a620a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cd404b9dc7174d4db13a792a1216038, type: 3}
 --- !u!224 &1858802687 stripped
