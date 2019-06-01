@@ -6,9 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Drum/DrumScene.unity
     guid: fa57cba3264384c8fb8cfb27b644145c
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
+=======
+    path: Assets/Scenes/GameManagerScene.unity
+>>>>>>> ac473ff... Add animated line.
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
