@@ -7,22 +7,22 @@ public class BgTile : MonoBehaviour
     SpriteRenderer render;
     public float colorDelay = 2f;
     Color targetColor;
+    bool active = false;
 
     void Awake()
     {
         render = GetComponent<SpriteRenderer>();
+        render.color = Color.clear;
+        targetColor = Color.clear;
         if (Random.Range(0f, 1f) > 0.5f)
         {
             Invoke("ClearColor", 0f);
-            render.color = Color.clear;
-            targetColor = Color.HSVToRGB(Random.Range(0f, 1f), 0.6f, 0.6f);
         }
         else
         {
-            Invoke("ChangeColor", 0f);
-            render.color = Color.HSVToRGB(Random.Range(0f, 1f), 0.6f, 0.6f);
-            targetColor = Color.clear;
+            Invoke("ChangeColor", 0f);            
         }
+        Invoke("Activate", colorDelay / 2f);
     }
 
     void ChangeColor()
@@ -37,12 +37,20 @@ public class BgTile : MonoBehaviour
         Invoke("ChangeColor", colorDelay + Random.Range(0f, colorDelay));
     }
 
+    void Activate()
+    {
+        active = true;
+    }
+
     void Update()
     {
-        render.color = Color.Lerp(
-            render.color,
-            targetColor,
-            colorDelay * Time.deltaTime
-        );
+        if (active)
+        {
+            render.color = Color.Lerp(
+                render.color,
+                targetColor,
+                colorDelay * Time.deltaTime
+            );
+        }
     }
 }
