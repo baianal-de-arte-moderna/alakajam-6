@@ -95,6 +95,7 @@ MonoBehaviour:
   subdivisions: 16
   gridMarginOffset: 0.01
   gridLineWidth: 0.02
+  gridHeight: 3
   maxPlaysPerSubdivision: 2
   playerTiles:
   - {fileID: 3267220640452673610, guid: ace1bb4fc337d1e41b0fc625f708edaf, type: 3}
