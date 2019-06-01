@@ -1,10 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
+
+[Serializable]
+public class DrumKitHitEvent : UnityEvent<int>
+{
+}
 
 public class DrumKit : MonoBehaviour
 {
     [SerializeField]
-    private UnityEvent<int> OnDrumKitHitEvent;
+    private DrumKitHitEvent OnDrumKitHitEvent;
 
     public void DrumElementHit(int index)
     {
