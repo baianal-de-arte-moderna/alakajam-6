@@ -10,10 +10,19 @@ public class PlayerEvent : UnityEvent<int, int>
 {
 }
 
+[Serializable]
+public class PlayerChangedEvent : UnityEvent<int>
+{ }
+
 public class BeatHandler : MonoBehaviour
 {
+    #region editor_variables
     [SerializeField]
     private PlayerEvent OnPlayerEvent;
+
+    [SerializeField]
+    private PlayerChangedEvent OnPlayerChanged;
+    #endregion
 
     private Dictionary<int, List<int>> beats = new Dictionary<int, List<int>>();
 
@@ -41,7 +50,6 @@ public class BeatHandler : MonoBehaviour
             if (!currentPlayerMove)
             {
                 SetCurrentPlayer((currentPlayer + 1) % numberOfPlayers);
-
             }
             currentTime %= duration;
         }
@@ -77,6 +85,7 @@ public class BeatHandler : MonoBehaviour
     {
         currentPlayer = newCurrentPlayer;
         currentPlayerMove = true;
+        OnPlayerChanged?.Invoke(newCurrentPlayer);
         Debug.Log($"Player {currentPlayer}'s turn");
     }
 
