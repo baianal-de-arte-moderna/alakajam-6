@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Drum/DrumScene.unity
     guid: fa57cba3264384c8fb8cfb27b644145c
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/GameManagerScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Menus/ChooseSong/ChooseSongScene.unity
