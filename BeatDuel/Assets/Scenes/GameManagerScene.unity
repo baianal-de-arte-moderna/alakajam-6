@@ -872,6 +872,11 @@ PrefabInstance:
       propertyPath: OnPlayerChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4417558415707792460, guid: 73e0a54e0e00842bea0b7edaa5f3cc80,
+        type: 3}
+      propertyPath: audioLoop
+      value: 
+      objectReference: {fileID: 561178991}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e0a54e0e00842bea0b7edaa5f3cc80, type: 3}
 --- !u!114 &1761148956 stripped
@@ -1554,7 +1559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62e63c650bad924da7baa745d2ffd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _duration: 2
+  audioLoop: {fileID: 561178991}
 --- !u!1001 &3283943705371469842
 PrefabInstance:
   m_ObjectHideFlags: 0
