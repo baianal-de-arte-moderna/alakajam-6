@@ -1484,13 +1484,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907517345}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1495837014}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1622,6 +1622,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grid
       objectReference: {fileID: 0}
+    - target: {fileID: 4801459314322188558, guid: b2566e92336936d4daf42b32122c19f7,
+        type: 3}
+      propertyPath: gridOffset
+      value: 0.015
+      objectReference: {fileID: 0}
     - target: {fileID: 3283943705892823826, guid: b2566e92336936d4daf42b32122c19f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1681,11 +1686,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4801459314322188558, guid: b2566e92336936d4daf42b32122c19f7,
-        type: 3}
-      propertyPath: gridOffset
-      value: 0.015
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2566e92336936d4daf42b32122c19f7, type: 3}

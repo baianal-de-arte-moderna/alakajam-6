@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     {
         currentPlayerIndex = newPlayerIndex;
         GetComponent<Text>().text = $"Player {currentPlayerIndex}'s turn.";
-        this.transform.Rotate(Vector3.back, currentPlayerIndex * 180);
+        this.transform.Rotate(Vector3.back, 180);
     }
 
     // Start is called before the first frame update
