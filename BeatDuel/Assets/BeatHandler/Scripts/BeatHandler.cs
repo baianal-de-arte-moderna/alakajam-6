@@ -1,13 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
+
+[Serializable]
+public class PlayerEvent : UnityEvent<int, int>
+{
+}
 
 public class BeatHandler : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerEvent OnPlayerEvent;
+
     private Dictionary<int, List<int>> beats = new Dictionary<int, List<int>>();
 
     private int numberOfPlayers = 2;
-    private float duration = 4.0f;
+    private float duration = 2.0f;
     private int numberOfSubdivisions = 16;
 
     private int currentPlayer;
@@ -92,6 +102,7 @@ public class BeatHandler : MonoBehaviour
                 currentPlayerMove = false;
                 currentSubdivisionBeats.Add(beat);
                 currentPlayerBeats.Add(beat);
+                OnPlayerEvent?.Invoke(currentSubdivision, currentPlayer);
             }
             else
             {
