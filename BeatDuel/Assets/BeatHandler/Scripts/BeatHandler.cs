@@ -18,7 +18,7 @@ public class BeatHandler : MonoBehaviour
     private Dictionary<int, List<int>> beats = new Dictionary<int, List<int>>();
 
     private int numberOfPlayers = 2;
-    private float duration = 2.0f;
+    private float duration = Director.SongDuration / 2;
     private int numberOfSubdivisions = 16;
 
     private int currentPlayer;
