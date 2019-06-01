@@ -61,7 +61,7 @@ public class GridView : MonoBehaviour
         {
             currentPlays[i] = new List<GameObject>();
         }
-        TestRegisterPlay(); 
+        //TestRegisterPlay(); 
     }
 
     private void TestRegisterPlay()
