@@ -22,12 +22,15 @@ public class BeatHandler : MonoBehaviour
 
     [SerializeField]
     private PlayerChangedEvent OnPlayerChanged;
+
+    [SerializeField]
+    private AudioSource audioLoop;
     #endregion
 
     private Dictionary<int, List<int>> beats = new Dictionary<int, List<int>>();
 
+    private float CYCLE_DURATION;
     private int numberOfPlayers = 2;
-    private float duration = Director.SongDuration / 2;
     private int numberOfSubdivisions = 16;
 
     private int currentPlayer;
@@ -38,23 +41,24 @@ public class BeatHandler : MonoBehaviour
 
     private void Start()
     {
+        CYCLE_DURATION = audioLoop.clip.length / 2;
         SetCurrentPlayer(0);
         SetCurrentSubdivision(0);
     }
 
     private void FixedUpdate()
     {
-        currentTime = currentTime + Time.deltaTime;
-        if (currentTime > duration)
+        currentTime = audioLoop.time;
+        if (audioLoop.time >= CYCLE_DURATION)
         {
             if (!currentPlayerMove)
             {
                 SetCurrentPlayer((currentPlayer + 1) % numberOfPlayers);
             }
-            currentTime %= duration;
+            currentTime -= CYCLE_DURATION;
         }
 
-        int computedSubdivision = (int) Mathf.Floor(currentTime / duration * numberOfSubdivisions);
+        int computedSubdivision = (int) Mathf.Floor(currentTime / CYCLE_DURATION * numberOfSubdivisions);
         if (currentSubdivision != computedSubdivision)
         {
             if (!CheckCurrentPlayerBeats())
