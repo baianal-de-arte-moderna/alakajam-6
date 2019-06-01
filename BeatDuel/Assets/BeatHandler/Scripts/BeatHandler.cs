@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class PlayerEvent : UnityEvent<int, int>
@@ -50,7 +51,7 @@ public class BeatHandler : MonoBehaviour
         {
             if (!CheckCurrentPlayerBeats())
             {
-                GameOver(currentPlayer);
+                OnGameOver(currentPlayer);
             }
             SetCurrentSubdivision(computedSubdivision);
         }
@@ -106,7 +107,7 @@ public class BeatHandler : MonoBehaviour
             }
             else
             {
-                GameOver(currentPlayer);
+                OnGameOver(currentPlayer);
             }
         }
         else if (!currentPlayerBeats.Contains(beat))
@@ -115,7 +116,7 @@ public class BeatHandler : MonoBehaviour
         }
         else
         {
-            GameOver(currentPlayer);
+            OnGameOver(currentPlayer);
         }
 
         beats[currentSubdivision] = currentSubdivisionBeats;
@@ -132,10 +133,10 @@ public class BeatHandler : MonoBehaviour
         return currentSubdivisionBeats.All(beat => currentPlayerBeats.Contains(beat));
     }
 
-    private void GameOver(int loserPlayer)
+    private void OnGameOver(int loserPlayer)
     {
-        Debug.Log($"Player {loserPlayer} lost!");
-        // TODO Game over!
+        GameOver.loserPlayer = loserPlayer;
+        SceneManager.LoadScene("GameOver");
     }
 
     private string GetBeatsString(Dictionary<int, List<int>> beatDictionary)

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Menus/ChooseSong/ChooseSongScene.unity
     guid: ab82a75b87dbe3845b961a56d5296c9b
+  - enabled: 1
+    path: Assets/Menus/GameOver/GameOver.unity
+    guid: 4938bc0776fe74680a8d381ccf69c9d7
   m_configObjects: {}
