@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour
+public class GameOver : MonoBehaviour, IPointerDownHandler
 {
     public static int loserPlayer;
 
@@ -13,5 +15,10 @@ public class GameOver : MonoBehaviour
             rotation = 180;
         }
         gameObject.transform.Rotate(Vector3.forward, rotation);
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
