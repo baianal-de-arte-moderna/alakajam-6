@@ -29,7 +29,7 @@ public class BeatHandler : MonoBehaviour
 
     private int currentPlayer;
     private int currentSubdivision;
-    private List<int> currentPlayerBeats = new List<int>();
+    private List<int> currentPlayerMissingBeats = new List<int>();
     private bool currentPlayerMove;
 
     private void Start()
@@ -82,7 +82,7 @@ public class BeatHandler : MonoBehaviour
     private void SetCurrentSubdivision(int newCurrentSubdivision)
     {
         currentSubdivision = newCurrentSubdivision;
-        currentPlayerBeats.Clear();
+        GetSubdivisionBeats(currentSubdivision).ForEach(beat => currentPlayerMissingBeats.Add(beat));
         Debug.Log($"Current subdivision: {currentSubdivision}");
     }
 
@@ -90,45 +90,26 @@ public class BeatHandler : MonoBehaviour
     {
         Debug.Log($"Register beat {beat} for player {currentPlayer}");
 
-        if (!beats.TryGetValue(currentSubdivision, out List<int> currentSubdivisionBeats))
+        if (currentPlayerMissingBeats.Contains(beat))
         {
-            currentSubdivisionBeats = new List<int>();
+            currentPlayerMissingBeats.Remove(beat);
         }
-
-        if (!currentSubdivisionBeats.Contains(beat))
+        else if (currentPlayerMove)
         {
-            if (currentPlayerMove)
-            {
-                currentPlayerMove = false;
-                currentSubdivisionBeats.Add(beat);
-                currentPlayerBeats.Add(beat);
-                OnPlayerEvent?.Invoke(currentSubdivision, currentPlayer);
-            }
-            else
-            {
-                OnGameOver(currentPlayer, "You played twice in this turn!");
-            }
-        }
-        else if (!currentPlayerBeats.Contains(beat))
-        {
-            currentPlayerBeats.Add(beat);
+            currentPlayerMove = false;
+            beats[currentSubdivision] = GetSubdivisionBeats(currentSubdivision);
+            beats[currentSubdivision].Add(beat);
+            OnPlayerEvent?.Invoke(currentSubdivision, currentPlayer);
         }
         else
         {
-            OnGameOver(currentPlayer, "You already played that note!");
+            OnGameOver(currentPlayer, "You played a wrong note!");
         }
-
-        beats[currentSubdivision] = currentSubdivisionBeats;
     }
 
     private bool CheckCurrentPlayerBeats()
     {
-        if (!beats.TryGetValue(currentSubdivision, out List<int> currentSubdivisionBeats))
-        {
-            currentSubdivisionBeats = new List<int>();
-        }
-
-        return currentSubdivisionBeats.All(beat => currentPlayerBeats.Contains(beat));
+        return currentPlayerMissingBeats.Count == 0;
     }
 
     private void OnGameOver(int loserPlayer, string gameOverReason)
@@ -136,5 +117,14 @@ public class BeatHandler : MonoBehaviour
         GameOver.loserPlayer = loserPlayer;
         GameOver.gameOverReason = gameOverReason;
         SceneManager.LoadScene("GameOver");
+    }
+
+    private List<int> GetSubdivisionBeats(int subdivision)
+    {
+        if (!beats.TryGetValue(subdivision, out List<int> subdivisionBeats))
+        {
+            subdivisionBeats = new List<int>();
+        }
+        return subdivisionBeats;
     }
 }
