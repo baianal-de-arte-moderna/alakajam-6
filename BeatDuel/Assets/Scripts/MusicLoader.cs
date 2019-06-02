@@ -7,7 +7,11 @@ public class MusicLoader : MonoBehaviour
 
     void Start()
     {
-        audioSource.clip = Resources.Load<AudioClip>($"Audio/{Director.SongName}");
+        AudioClip audioClip = Resources.Load<AudioClip>($"Audio/{Director.SongName}");
+        if (audioClip)
+        {
+            audioSource.clip = audioClip;
+        }
         audioSource.Play();
     }
 }

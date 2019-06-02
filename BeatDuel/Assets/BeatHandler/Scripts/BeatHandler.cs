@@ -63,7 +63,7 @@ public class BeatHandler : MonoBehaviour
         {
             if (!CheckCurrentPlayerBeats())
             {
-                OnGameOver(currentPlayer);
+                OnGameOver(currentPlayer, "You didn't hit all the beats!");
             }
             SetCurrentSubdivision(computedSubdivision);
         }
@@ -120,7 +120,7 @@ public class BeatHandler : MonoBehaviour
             }
             else
             {
-                OnGameOver(currentPlayer);
+                OnGameOver(currentPlayer, "You played twice in this turn!");
             }
         }
         else if (!currentPlayerBeats.Contains(beat))
@@ -129,7 +129,7 @@ public class BeatHandler : MonoBehaviour
         }
         else
         {
-            OnGameOver(currentPlayer);
+            OnGameOver(currentPlayer, "You already played that note!");
         }
 
         beats[currentSubdivision] = currentSubdivisionBeats;
@@ -146,9 +146,10 @@ public class BeatHandler : MonoBehaviour
         return currentSubdivisionBeats.All(beat => currentPlayerBeats.Contains(beat));
     }
 
-    private void OnGameOver(int loserPlayer)
+    private void OnGameOver(int loserPlayer, string gameOverReason)
     {
         GameOver.loserPlayer = loserPlayer;
+        GameOver.gameOverReason = gameOverReason;
         SceneManager.LoadScene("GameOver");
     }
 
