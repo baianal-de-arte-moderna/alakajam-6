@@ -34,6 +34,9 @@ public class GameOver : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        SceneManager.LoadScene("MainMenu");
+        if (Time.timeSinceLevelLoad >= 1)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
