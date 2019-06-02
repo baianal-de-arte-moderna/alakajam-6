@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 [Serializable]
 public class PlayerEvent : UnityEvent<int, int>
-{
-}
+{ }
 
 [Serializable]
 public class PlayerChangedEvent : UnityEvent<int>
@@ -16,6 +14,8 @@ public class PlayerChangedEvent : UnityEvent<int>
 
 public class BeatHandler : MonoBehaviour
 {
+    private const int NUMBER_OF_PLAYERS = 2;
+
     #region editor_variables
     [SerializeField]
     private PlayerEvent OnPlayerEvent;
@@ -31,45 +31,31 @@ public class BeatHandler : MonoBehaviour
     #endregion
 
     private Dictionary<int, List<int>> beats = new Dictionary<int, List<int>>();
-
-    private float CYCLE_DURATION;
-    private int numberOfPlayers = 2;
-    private int numberOfSubdivisions = 16;
+    private List<int> previousSubdivisionMissingBeats = new List<int>();
+    private List<int> currentSubdivisionMissingBeats = new List<int>();
 
     private int currentPlayer;
-    private List<int> currentPlayerBeats = new List<int>();
-    private bool currentPlayerMove;
-    private float currentTime;
     private int currentSubdivision;
+    private bool currentPlayerMove;
 
     private void Start()
     {
-        CYCLE_DURATION = audioLoop.clip.length / 2;
         SetCurrentPlayer(0);
         SetCurrentSubdivision(0);
     }
 
-    private void FixedUpdate()
+    public void OnChangeCycle()
     {
-        currentTime = audioLoop.time;
-        if (audioLoop.time >= CYCLE_DURATION)
+        if (!currentPlayerMove)
         {
-            if (!currentPlayerMove)
-            {
-                SetCurrentPlayer((currentPlayer + 1) % numberOfPlayers);
-            }
-            currentTime -= CYCLE_DURATION;
+            SetCurrentPlayer((currentPlayer + 1) % NUMBER_OF_PLAYERS);
         }
+    }
 
-        int computedSubdivision = (int) Mathf.Floor(currentTime / CYCLE_DURATION * numberOfSubdivisions);
-        if (currentSubdivision != computedSubdivision)
-        {
-            if (!CheckCurrentPlayerBeats())
-            {
-                OnGameOver(currentPlayer, "You didn't hit all the beats!");
-            }
-            SetCurrentSubdivision(computedSubdivision);
-        }
+    public void OnChangeSubdivision(int newCurrentSubdivision)
+    {
+        Invoke("CheckCurrentPlayerBeats", 0.1f);
+        SetCurrentSubdivision(newCurrentSubdivision);
     }
 
     public void RegisterPlayer0Beat(int beat)
@@ -99,7 +85,9 @@ public class BeatHandler : MonoBehaviour
     private void SetCurrentSubdivision(int newCurrentSubdivision)
     {
         currentSubdivision = newCurrentSubdivision;
-        currentPlayerBeats.Clear();
+        previousSubdivisionMissingBeats.AddRange(currentSubdivisionMissingBeats);
+        currentSubdivisionMissingBeats.Clear();
+        currentSubdivisionMissingBeats.AddRange(GetSubdivisionBeats(currentSubdivision));
         Debug.Log($"Current subdivision: {currentSubdivision}");
     }
 
@@ -107,46 +95,33 @@ public class BeatHandler : MonoBehaviour
     {
         Debug.Log($"Register beat {beat} for player {currentPlayer}");
 
-        if (!beats.TryGetValue(currentSubdivision, out List<int> currentSubdivisionBeats))
+        if (previousSubdivisionMissingBeats.Contains(beat))
         {
-            currentSubdivisionBeats = new List<int>();
+            previousSubdivisionMissingBeats.Remove(beat);
         }
-
-        if (!currentSubdivisionBeats.Contains(beat))
+        else if (currentSubdivisionMissingBeats.Contains(beat))
         {
-            if (currentPlayerMove)
-            {
-                currentPlayerMove = false;
-                currentSubdivisionBeats.Add(beat);
-                currentPlayerBeats.Add(beat);
-                OnPlayerEvent?.Invoke(currentSubdivision, currentPlayer);
-            }
-            else
-            {
-                OnGameOver(currentPlayer, "You played twice in this turn!");
-            }
+            currentSubdivisionMissingBeats.Remove(beat);
         }
-        else if (!currentPlayerBeats.Contains(beat))
+        else if (currentPlayerMove)
         {
-            currentPlayerBeats.Add(beat);
+            currentPlayerMove = false;
+            beats[currentSubdivision] = GetSubdivisionBeats(currentSubdivision);
+            beats[currentSubdivision].Add(beat);
+            OnPlayerEvent?.Invoke(currentSubdivision, currentPlayer);
         }
         else
         {
-            OnGameOver(currentPlayer, "You already played that note!");
+            OnGameOver(currentPlayer, "You played a wrong beat!");
         }
-
-        beats[currentSubdivision] = currentSubdivisionBeats;
-        Debug.Log($"Beats: {GetBeatsString(beats)}");
     }
 
-    private bool CheckCurrentPlayerBeats()
+    private void CheckCurrentPlayerBeats()
     {
-        if (!beats.TryGetValue(currentSubdivision, out List<int> currentSubdivisionBeats))
+        if (previousSubdivisionMissingBeats.Count > 0)
         {
-            currentSubdivisionBeats = new List<int>();
+            OnGameOver(currentPlayer, "You didn't hit all the beats!");
         }
-
-        return currentSubdivisionBeats.All(beat => currentPlayerBeats.Contains(beat));
     }
 
     private void OnGameOver(int loserPlayer, string gameOverReason)
@@ -159,35 +134,12 @@ public class BeatHandler : MonoBehaviour
         }
     }
 
-    private string GetBeatsString(Dictionary<int, List<int>> beatDictionary)
+    private List<int> GetSubdivisionBeats(int subdivision)
     {
-        string beatsString = "";
-        for (int subdivision = 0; subdivision < numberOfSubdivisions; ++subdivision)
+        if (!beats.TryGetValue(subdivision, out List<int> subdivisionBeats))
         {
-            if (!beats.TryGetValue(subdivision, out List<int> subdivisionBeats))
-            {
-                subdivisionBeats = new List<int>();
-            }
-
-            beatsString += $"{subdivision}: [{GetBeatsString(subdivisionBeats)}] ";
+            subdivisionBeats = new List<int>();
         }
-        return beatsString;
-    }
-
-    private string GetBeatsString(List<int> beatList)
-    {
-        string beatsString = "";
-        for (int beat = 0; beat < 5; ++beat)
-        {
-            if (beatList.Contains(beat))
-            {
-                beatsString += $"{beat}";
-            }
-            else
-            {
-                beatsString += $" ";
-            }
-        }
-        return beatsString;
+        return subdivisionBeats;
     }
 }
