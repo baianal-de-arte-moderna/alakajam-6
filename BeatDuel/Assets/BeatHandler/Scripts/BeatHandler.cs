@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 
 [Serializable]
 public class PlayerEvent : UnityEvent<int, int>
-{
-}
+{ }
 
 [Serializable]
 public class PlayerChangedEvent : UnityEvent<int>
@@ -16,57 +15,44 @@ public class PlayerChangedEvent : UnityEvent<int>
 
 public class BeatHandler : MonoBehaviour
 {
+    private const int NUMBER_OF_PLAYERS = 2;
+
     #region editor_variables
     [SerializeField]
     private PlayerEvent OnPlayerEvent;
 
     [SerializeField]
     private PlayerChangedEvent OnPlayerChanged;
-
-    [SerializeField]
-    private AudioSource audioLoop;
     #endregion
 
     private Dictionary<int, List<int>> beats = new Dictionary<int, List<int>>();
 
-    private float CYCLE_DURATION;
-    private int numberOfPlayers = 2;
-    private int numberOfSubdivisions = 16;
-
     private int currentPlayer;
+    private int currentSubdivision;
     private List<int> currentPlayerBeats = new List<int>();
     private bool currentPlayerMove;
-    private float currentTime;
-    private int currentSubdivision;
 
     private void Start()
     {
-        CYCLE_DURATION = audioLoop.clip.length / 2;
         SetCurrentPlayer(0);
         SetCurrentSubdivision(0);
     }
 
-    private void FixedUpdate()
+    public void OnChangeCycle()
     {
-        currentTime = audioLoop.time;
-        if (audioLoop.time >= CYCLE_DURATION)
+        if (!currentPlayerMove)
         {
-            if (!currentPlayerMove)
-            {
-                SetCurrentPlayer((currentPlayer + 1) % numberOfPlayers);
-            }
-            currentTime -= CYCLE_DURATION;
+            SetCurrentPlayer((currentPlayer + 1) % NUMBER_OF_PLAYERS);
         }
+    }
 
-        int computedSubdivision = (int) Mathf.Floor(currentTime / CYCLE_DURATION * numberOfSubdivisions);
-        if (currentSubdivision != computedSubdivision)
+    public void OnChangeSubdivision(int newCurrentSubdivision)
+    {
+        if (!CheckCurrentPlayerBeats())
         {
-            if (!CheckCurrentPlayerBeats())
-            {
-                OnGameOver(currentPlayer, "You didn't hit all the beats!");
-            }
-            SetCurrentSubdivision(computedSubdivision);
+            OnGameOver(currentPlayer, "You didn't hit all the beats!");
         }
+        SetCurrentSubdivision(newCurrentSubdivision);
     }
 
     public void RegisterPlayer0Beat(int beat)
@@ -133,7 +119,6 @@ public class BeatHandler : MonoBehaviour
         }
 
         beats[currentSubdivision] = currentSubdivisionBeats;
-        Debug.Log($"Beats: {GetBeatsString(beats)}");
     }
 
     private bool CheckCurrentPlayerBeats()
@@ -151,37 +136,5 @@ public class BeatHandler : MonoBehaviour
         GameOver.loserPlayer = loserPlayer;
         GameOver.gameOverReason = gameOverReason;
         SceneManager.LoadScene("GameOver");
-    }
-
-    private string GetBeatsString(Dictionary<int, List<int>> beatDictionary)
-    {
-        string beatsString = "";
-        for (int subdivision = 0; subdivision < numberOfSubdivisions; ++subdivision)
-        {
-            if (!beats.TryGetValue(subdivision, out List<int> subdivisionBeats))
-            {
-                subdivisionBeats = new List<int>();
-            }
-
-            beatsString += $"{subdivision}: [{GetBeatsString(subdivisionBeats)}] ";
-        }
-        return beatsString;
-    }
-
-    private string GetBeatsString(List<int> beatList)
-    {
-        string beatsString = "";
-        for (int beat = 0; beat < 5; ++beat)
-        {
-            if (beatList.Contains(beat))
-            {
-                beatsString += $"{beat}";
-            }
-            else
-            {
-                beatsString += $" ";
-            }
-        }
-        return beatsString;
     }
 }
