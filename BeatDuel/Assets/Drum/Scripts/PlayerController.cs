@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public void PlayerChanged(int newPlayerIndex)
     {
         currentPlayerIndex = newPlayerIndex;
-        GetComponent<Text>().text = $"Player {currentPlayerIndex + 1}'s turn.";
+        //GetComponent<Text>().text = $"Player {currentPlayerIndex + 1}'s turn.";
         this.transform.Rotate(Vector3.back, 180);
     }
 
