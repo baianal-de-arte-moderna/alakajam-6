@@ -17,6 +17,14 @@ public class BgGrid : MonoBehaviour
                 Instantiate(TilePrefab, new Vector3(i, j), Quaternion.identity, transform);
             }
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+            AndroidJavaObject activity = new AndroidJavaClass("com.unity3d.player.UnityPlayer")
+                        .GetStatic<AndroidJavaObject>("currentActivity");
+            activity.Call<bool>("moveTaskToBack", true);
+        }
     }
 
     public void LoadSongChooser()
