@@ -103,7 +103,7 @@ public class BeatHandler : MonoBehaviour
         {
             currentSubdivisionMissingBeats.Remove(beat);
         }
-        else if (currentPlayerMove)
+        else if (currentPlayerMove && !GetSubdivisionBeats(currentSubdivision).Contains(beat))
         {
             currentPlayerMove = false;
             beats[currentSubdivision] = GetSubdivisionBeats(currentSubdivision);
