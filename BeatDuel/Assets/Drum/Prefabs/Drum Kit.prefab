@@ -210,6 +210,31 @@ PrefabInstance:
       propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColor.b
+      value: 0.85882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColor.a
+      value: 0.49803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 950190979463970127, guid: 8b42f43f795f04b729a1728388abe953,
         type: 3}
       propertyPath: m_audioClip
@@ -389,6 +414,16 @@ PrefabInstance:
         type: 3}
       propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 950190979463970127, guid: 8b42f43f795f04b729a1728388abe953,
         type: 3}
@@ -570,6 +605,21 @@ PrefabInstance:
       propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 950190979463970127, guid: 8b42f43f795f04b729a1728388abe953,
         type: 3}
       propertyPath: m_audioClip
@@ -744,6 +794,31 @@ PrefabInstance:
         type: 3}
       propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColor.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColor.b
+      value: 0.032710414
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColor.a
+      value: 0.49803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 950190979463970127, guid: 8b42f43f795f04b729a1728388abe953,
         type: 3}
@@ -924,6 +999,36 @@ PrefabInstance:
         type: 3}
       propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColor.b
+      value: 0.18552995
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColor.a
+      value: 0.49803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950190979463970123, guid: 8b42f43f795f04b729a1728388abe953,
+        type: 3}
+      propertyPath: padColorPressed.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 950190979463970127, guid: 8b42f43f795f04b729a1728388abe953,
         type: 3}
