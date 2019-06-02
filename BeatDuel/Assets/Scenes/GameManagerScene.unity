@@ -301,7 +301,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -601,17 +601,17 @@ PrefabInstance:
     - target: {fileID: 2757887270361557332, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1080
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2757887270361557332, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 640
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 2757887270361557332, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2757887270361557332, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
@@ -621,7 +621,7 @@ PrefabInstance:
     - target: {fileID: 2757887270361557332, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2757887270361557332, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
@@ -1040,17 +1040,17 @@ PrefabInstance:
     - target: {fileID: 2757887270361557332, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1080
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2757887270361557332, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 640
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 2757887270361557332, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2757887270361557332, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
@@ -1060,7 +1060,7 @@ PrefabInstance:
     - target: {fileID: 2757887270361557332, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2757887270361557332, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
