@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -26,10 +25,11 @@ public class BeatHandler : MonoBehaviour
     #endregion
 
     private Dictionary<int, List<int>> beats = new Dictionary<int, List<int>>();
+    private List<int> previousSubdivisionMissingBeats = new List<int>();
+    private List<int> currentSubdivisionMissingBeats = new List<int>();
 
     private int currentPlayer;
     private int currentSubdivision;
-    private List<int> currentPlayerMissingBeats = new List<int>();
     private bool currentPlayerMove;
 
     private void Start()
@@ -48,10 +48,7 @@ public class BeatHandler : MonoBehaviour
 
     public void OnChangeSubdivision(int newCurrentSubdivision)
     {
-        if (!CheckCurrentPlayerBeats())
-        {
-            OnGameOver(currentPlayer, "You didn't hit all the beats!");
-        }
+        Invoke("CheckCurrentPlayerBeats", 0.1f);
         SetCurrentSubdivision(newCurrentSubdivision);
     }
 
@@ -82,7 +79,9 @@ public class BeatHandler : MonoBehaviour
     private void SetCurrentSubdivision(int newCurrentSubdivision)
     {
         currentSubdivision = newCurrentSubdivision;
-        GetSubdivisionBeats(currentSubdivision).ForEach(beat => currentPlayerMissingBeats.Add(beat));
+        previousSubdivisionMissingBeats.AddRange(currentSubdivisionMissingBeats);
+        currentSubdivisionMissingBeats.Clear();
+        currentSubdivisionMissingBeats.AddRange(GetSubdivisionBeats(currentSubdivision));
         Debug.Log($"Current subdivision: {currentSubdivision}");
     }
 
@@ -90,9 +89,13 @@ public class BeatHandler : MonoBehaviour
     {
         Debug.Log($"Register beat {beat} for player {currentPlayer}");
 
-        if (currentPlayerMissingBeats.Contains(beat))
+        if (previousSubdivisionMissingBeats.Contains(beat))
         {
-            currentPlayerMissingBeats.Remove(beat);
+            previousSubdivisionMissingBeats.Remove(beat);
+        }
+        else if (currentSubdivisionMissingBeats.Contains(beat))
+        {
+            currentSubdivisionMissingBeats.Remove(beat);
         }
         else if (currentPlayerMove)
         {
@@ -103,13 +106,16 @@ public class BeatHandler : MonoBehaviour
         }
         else
         {
-            OnGameOver(currentPlayer, "You played a wrong note!");
+            OnGameOver(currentPlayer, "You played a wrong beat!");
         }
     }
 
-    private bool CheckCurrentPlayerBeats()
+    private void CheckCurrentPlayerBeats()
     {
-        return currentPlayerMissingBeats.Count == 0;
+        if (previousSubdivisionMissingBeats.Count > 0)
+        {
+            OnGameOver(currentPlayer, "You didn't hit all the beats!");
+        }
     }
 
     private void OnGameOver(int loserPlayer, string gameOverReason)
