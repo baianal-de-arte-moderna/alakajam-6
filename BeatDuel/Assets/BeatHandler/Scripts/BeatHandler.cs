@@ -28,6 +28,9 @@ public class BeatHandler : MonoBehaviour
 
     [SerializeField]
     private bool isTutorial = false;
+
+    [SerializeField]
+    private UnityEvent OnFailedTutorialFeedback;
     #endregion
 
     private Dictionary<int, List<int>> beats = new Dictionary<int, List<int>>();
@@ -38,23 +41,39 @@ public class BeatHandler : MonoBehaviour
     private int currentSubdivision;
     private bool currentPlayerMove;
 
+    // Tutorial Components
+    private bool failedTurn;
+
     private void Start()
     {
         SetCurrentPlayer(0);
         SetCurrentSubdivision(0);
+        failedTurn = false;
     }
 
     public void OnChangeCycle()
     {
-        if (!currentPlayerMove)
+        if (!currentPlayerMove && !(isTutorial && failedTurn))
         {
+            Debug.Log(currentPlayerMove);
+            Debug.Log(isTutorial);
+            Debug.Log(failedTurn);
             SetCurrentPlayer((currentPlayer + 1) % NUMBER_OF_PLAYERS);
         }
+        else if (isTutorial && !currentPlayerMove)
+        {
+            OnFailedTutorialFeedback?.Invoke();
+        }
+        previousSubdivisionMissingBeats.Clear();
+        failedTurn = false;
     }
 
     public void OnChangeSubdivision(int newCurrentSubdivision)
     {
-        Invoke("CheckCurrentPlayerBeats", 0.1f);
+        if (newCurrentSubdivision < 15)
+        {
+            Invoke("CheckCurrentPlayerBeats", 0.1f);
+        }
         SetCurrentSubdivision(newCurrentSubdivision);
     }
 
@@ -79,7 +98,7 @@ public class BeatHandler : MonoBehaviour
         currentPlayer = newCurrentPlayer;
         currentPlayerMove = true;
         OnPlayerChanged?.Invoke(newCurrentPlayer);
-        Debug.Log($"Player {currentPlayer}'s turn");
+        //Debug.Log($"Player {currentPlayer}'s turn");
     }
 
     private void SetCurrentSubdivision(int newCurrentSubdivision)
@@ -88,12 +107,12 @@ public class BeatHandler : MonoBehaviour
         previousSubdivisionMissingBeats.AddRange(currentSubdivisionMissingBeats);
         currentSubdivisionMissingBeats.Clear();
         currentSubdivisionMissingBeats.AddRange(GetSubdivisionBeats(currentSubdivision));
-        Debug.Log($"Current subdivision: {currentSubdivision}");
+        //Debug.Log($"Current subdivision: {currentSubdivision}");
     }
 
     private void RegisterCurrentPlayerBeat(int beat)
     {
-        Debug.Log($"Register beat {beat} for player {currentPlayer}");
+        //Debug.Log($"Register beat {beat} for player {currentPlayer}");
 
         if (previousSubdivisionMissingBeats.Contains(beat))
         {
@@ -126,11 +145,16 @@ public class BeatHandler : MonoBehaviour
 
     private void OnGameOver(int loserPlayer, string gameOverReason)
     {
+        previousSubdivisionMissingBeats.Clear();
         if (!isTutorial)
         {
             GameOver.loserPlayer = loserPlayer;
             GameOver.gameOverReason = gameOverReason;
             SceneManager.LoadScene("GameOver");
+        }
+        else
+        {
+            failedTurn = true;
         }
     }
 

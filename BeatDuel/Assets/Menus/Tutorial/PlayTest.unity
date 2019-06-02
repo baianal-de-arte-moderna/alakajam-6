@@ -446,6 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExitOn: 1
   SafeGuard: {fileID: 291504301}
+  contentText: {fileID: 0}
 --- !u!1 &168434861
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExitOn: 0
   SafeGuard: {fileID: 291504301}
+  contentText: {fileID: 0}
 --- !u!1 &248038961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,6 +1201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExitOn: 2
   SafeGuard: {fileID: 291504301}
+  contentText: {fileID: 1264318973}
 --- !u!114 &314720774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,6 +1332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExitOn: 0
   SafeGuard: {fileID: 291504301}
+  contentText: {fileID: 0}
 --- !u!1 &339283630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,7 +1514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &368809584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1554,7 +1558,8 @@ MonoBehaviour:
 
 
 
-    Notice... On the real game you will LOSE if you fail to the keep the beat going'
+    WARNING... On the real game you will LOSE if you fail to the play the beats on
+    your turn'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1582,8 +1587,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1623,12 +1628,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 368809585}
-    characterCount: 92
+    characterCount: 101
     spriteCount: 0
-    spaceCount: 20
-    wordCount: 19
+    spaceCount: 22
+    wordCount: 21
     linkCount: 0
-    lineCount: 6
+    lineCount: 7
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1710,6 +1715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExitOn: 2
   SafeGuard: {fileID: 291504301}
+  contentText: {fileID: 0}
 --- !u!114 &399807376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1911,8 +1917,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2019,7 +2025,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2323,7 +2329,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2641,7 +2647,8 @@ MonoBehaviour:
 
 
 
-    Notice... On the real game you will LOSE if you fail to the keep the beat going'
+    WARNING... On the real game you will LOSE if you fail to the play the beats on
+    your turn'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2669,8 +2676,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3160,6 +3167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExitOn: 0
   SafeGuard: {fileID: 291504301}
+  contentText: {fileID: 0}
 --- !u!1 &843855437
 GameObject:
   m_ObjectHideFlags: 0
@@ -3494,6 +3502,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 5d18f33068367f841acf7de78b1a620a, type: 3}
+    - target: {fileID: 1647348465334039702, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cd404b9dc7174d4db13a792a1216038, type: 3}
 --- !u!224 &964740610 stripped
@@ -3766,6 +3779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExitOn: 2
   SafeGuard: {fileID: 291504301}
+  contentText: {fileID: 2136457115}
 --- !u!224 &1068360241
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5138,7 +5152,7 @@ Canvas:
   m_GameObject: {fileID: 1495837010}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -5389,6 +5403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExitOn: 2
   SafeGuard: {fileID: 291504301}
+  contentText: {fileID: 592523961}
 --- !u!114 &1636623860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5593,6 +5608,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4417558415707792460, guid: 73e0a54e0e00842bea0b7edaa5f3cc80,
         type: 3}
+      propertyPath: OnFailedTutorialFeedback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417558415707792460, guid: 73e0a54e0e00842bea0b7edaa5f3cc80,
+        type: 3}
       propertyPath: OnPlayerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
@@ -5701,6 +5721,31 @@ PrefabInstance:
       propertyPath: OnPlayerChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4417558415707792460, guid: 73e0a54e0e00842bea0b7edaa5f3cc80,
+        type: 3}
+      propertyPath: OnFailedTutorialFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417558415707792460, guid: 73e0a54e0e00842bea0b7edaa5f3cc80,
+        type: 3}
+      propertyPath: OnFailedTutorialFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417558415707792460, guid: 73e0a54e0e00842bea0b7edaa5f3cc80,
+        type: 3}
+      propertyPath: OnFailedTutorialFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1202014460}
+    - target: {fileID: 4417558415707792460, guid: 73e0a54e0e00842bea0b7edaa5f3cc80,
+        type: 3}
+      propertyPath: OnFailedTutorialFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FailedTutorialFeedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417558415707792460, guid: 73e0a54e0e00842bea0b7edaa5f3cc80,
+        type: 3}
+      propertyPath: OnFailedTutorialFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e0a54e0e00842bea0b7edaa5f3cc80, type: 3}
 --- !u!114 &1761148956 stripped
@@ -5782,6 +5827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExitOn: 2
   SafeGuard: {fileID: 291504301}
+  contentText: {fileID: 1045897280}
 --- !u!114 &1830528006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6363,6 +6409,11 @@ PrefabInstance:
       propertyPath: Priority
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 1647348465334039702, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cd404b9dc7174d4db13a792a1216038, type: 3}
 --- !u!224 &1858802687 stripped
@@ -6598,6 +6649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExitOn: 0
   SafeGuard: {fileID: 291504301}
+  contentText: {fileID: 0}
 --- !u!224 &1943381402
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6983,8 +7035,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7346,7 +7398,7 @@ MonoBehaviour:
     spaceCount: 14
     wordCount: 14
     linkCount: 0
-    lineCount: 4
+    lineCount: 5
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -7390,7 +7442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2133095916
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7427,6 +7479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExitOn: 0
   SafeGuard: {fileID: 291504301}
+  contentText: {fileID: 0}
 --- !u!114 &2133095918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7601,7 +7654,7 @@ MonoBehaviour:
     spaceCount: 18
     wordCount: 16
     linkCount: 0
-    lineCount: 6
+    lineCount: 7
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

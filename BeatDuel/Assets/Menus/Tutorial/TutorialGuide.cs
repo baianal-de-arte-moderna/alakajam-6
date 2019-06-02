@@ -54,4 +54,9 @@ public class TutorialGuide : MonoBehaviour
         if (steps[currentStep].ExitOn == StepExitCondition.ExitConditions.TurnChange)
             NextStep();
     }
+
+    public void FailedTutorialFeedback()
+    {
+        steps[currentStep].Failed();
+    }
 }
