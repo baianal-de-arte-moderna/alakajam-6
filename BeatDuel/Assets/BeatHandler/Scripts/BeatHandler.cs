@@ -25,6 +25,9 @@ public class BeatHandler : MonoBehaviour
 
     [SerializeField]
     private AudioSource audioLoop;
+
+    [SerializeField]
+    private bool isTutorial = false;
     #endregion
 
     private Dictionary<int, List<int>> beats = new Dictionary<int, List<int>>();
@@ -148,9 +151,12 @@ public class BeatHandler : MonoBehaviour
 
     private void OnGameOver(int loserPlayer, string gameOverReason)
     {
-        GameOver.loserPlayer = loserPlayer;
-        GameOver.gameOverReason = gameOverReason;
-        SceneManager.LoadScene("GameOver");
+        if (!isTutorial)
+        {
+            GameOver.loserPlayer = loserPlayer;
+            GameOver.gameOverReason = gameOverReason;
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     private string GetBeatsString(Dictionary<int, List<int>> beatDictionary)

@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Menus/Creditos/MenuCreditos.unity
     guid: 323f2e632067f324091d4090cf035cf5
+  - enabled: 1
+    path: Assets/Menus/Tutorial/Tutorial.unity
+    guid: 96726709f4a4cc04bbac513fe446cfb3
+  - enabled: 1
+    path: Assets/Menus/Tutorial/PlayTest.unity
+    guid: 39166d0df1fbdae46bcc57c5d9430c86
   m_configObjects: {}
