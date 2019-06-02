@@ -24,7 +24,7 @@ public class GameOver : MonoBehaviour, IPointerDownHandler
         {
             rotation = 180;
         }
-        gameOverText.rectTransform.Rotate(Vector3.forward, rotation);
+        gameOverText?.rectTransform?.Rotate(Vector3.forward, rotation);
 
         if (gameOverReason != null)
         {
