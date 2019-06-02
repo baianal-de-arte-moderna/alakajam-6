@@ -2000,6 +2000,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2015,6 +2016,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ed526a0f16e9c4cbcfa0b8f1cdcd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -6178,6 +6191,41 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3048759089122387774, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935089956180052590, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537550800179654517, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537550800179654517, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057304569701153966, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901309765748377067, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901309765748377067, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.size
@@ -6448,41 +6496,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Priority
       value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048759089122387774, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6935089956180052590, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8537550800179654517, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8537550800179654517, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5057304569701153966, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5901309765748377067, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5901309765748377067, guid: 2cd404b9dc7174d4db13a792a1216038,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cd404b9dc7174d4db13a792a1216038, type: 3}
