@@ -3507,6 +3507,41 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3048759089122387774, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935089956180052590, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537550800179654517, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537550800179654517, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057304569701153966, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901309765748377067, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901309765748377067, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cd404b9dc7174d4db13a792a1216038, type: 3}
 --- !u!224 &964740610 stripped
@@ -6138,6 +6173,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 5d18f33068367f841acf7de78b1a620a, type: 3}
+    - target: {fileID: 1647348465334039702, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2757887270100353972, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
       propertyPath: OnDrumElementHitEvent.m_PersistentCalls.m_Calls.Array.size
@@ -6409,9 +6449,39 @@ PrefabInstance:
       propertyPath: Priority
       value: 128
       objectReference: {fileID: 0}
-    - target: {fileID: 1647348465334039702, guid: 2cd404b9dc7174d4db13a792a1216038,
+    - target: {fileID: 3048759089122387774, guid: 2cd404b9dc7174d4db13a792a1216038,
         type: 3}
-      propertyPath: m_PreserveAspect
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935089956180052590, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537550800179654517, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537550800179654517, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057304569701153966, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901309765748377067, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901309765748377067, guid: 2cd404b9dc7174d4db13a792a1216038,
+        type: 3}
+      propertyPath: m_Color.g
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
