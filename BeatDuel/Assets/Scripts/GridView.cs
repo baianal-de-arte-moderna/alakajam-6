@@ -6,12 +6,13 @@ using UnityEngine;
 public class GridView : MonoBehaviour
 {
 #region editor_variables
-    public int subdivisions;
-    public float gridMarginOffset;
-    public float gridLineWidth;
-    public float gridHeight;
-    public int maxPlaysPerSubdivision;
-    public List<GameObject> playerTiles;
+    [SerializeField] private int subdivisions;
+    [SerializeField] private float gridMarginOffset;
+    [SerializeField] private float gridLineWidth;
+    [SerializeField] private float gridHeight;
+    [SerializeField] private int maxPlaysPerSubdivision;
+    [SerializeField] private List<GameObject> playerTiles;
+    [SerializeField] private GameObject gridLine;
 #endregion editor_variables
 
     private Dictionary<int, List<GameObject>> currentPlays;
@@ -61,7 +62,34 @@ public class GridView : MonoBehaviour
         {
             currentPlays[i] = new List<GameObject>();
         }
+        DrawGrid();
         //TestRegisterPlay(); 
+    }
+
+    private void DrawGridLine(float halfLength, Vector3 direction, Vector3 position)
+    {
+        GameObject line = Instantiate(gridLine);
+        line.transform.parent = transform;
+        line.transform.position = position;
+
+        LineRenderer lineRenderer = line.GetComponent<LineRenderer>();
+        lineRenderer.startWidth = gridLineWidth;
+        lineRenderer.endWidth = gridLineWidth;
+        lineRenderer.SetPositions(new Vector3[] { -halfLength * direction, halfLength * direction });
+    }
+
+    private void DrawGrid()
+    {
+        for (int i = 0; i <= maxPlaysPerSubdivision; i++)
+        {
+            Vector3 position = Mathf.Lerp(-GRIDHEIGHT_2, GRIDHEIGHT_2, i / (float)(maxPlaysPerSubdivision)) * Vector3.up;
+            DrawGridLine(SCREENWIDTH_2, Vector3.right, position);
+        }
+        for (int i = 0; i <= subdivisions; i++)
+        {
+            Vector3 position = Mathf.Lerp(-SCREENWIDTH_2, SCREENWIDTH_2, i / (float)(subdivisions)) * Vector3.right;
+            DrawGridLine(GRIDHEIGHT_2, Vector3.up, position);
+        }
     }
 
     private void TestRegisterPlay()
